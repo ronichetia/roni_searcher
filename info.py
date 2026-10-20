@@ -49,9 +49,9 @@ def env_str(*keys, default=''):
 # Bot Information Configuration
 # ============================
 SESSION = environ.get('SESSION', 'dreamxbotz_search')   # Session name for the bot
-API_ID = env_int('API_ID', 20803355)  # API ID from my.telegram.org — set via env, do not hardcode
-API_HASH = environ.get('API_HASH', 'caa85d91bcde4e8826ad697de02af771')  # API Hash from my.telegram.org — set via env
-BOT_TOKEN = environ.get('BOT_TOKEN', '')    # Bot token from @BotFather
+API_ID = env_int('API_ID', 39020336)  # API ID from my.telegram.org — set via env, do not hardcode
+API_HASH = environ.get('API_HASH', 'b6b6742ac6ad6936dfc88caeac95b7a4')  # API Hash from my.telegram.org — set via env
+BOT_TOKEN = environ.get('BOT_TOKEN', '8613715629:AAEjhE6eYwdYfb-wq517JdO0DMp978ZQcxY')    # Bot token from @BotFather
 
 # ============================
 # Bot Settings Configuration
@@ -88,20 +88,20 @@ AUTO_IMPORT_RETRY_DELAY = env_int('AUTO_IMPORT_RETRY_DELAY', 300)  # userbot sel
 # ============================
 # Admin, Channels & Users Configuration
 # ============================
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '8023726997 6389414945').split()] # Replace with the actual admin ID(s) to add
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1002086319581 -1003276318629 -1003453367461 -1003016600468').split()]  # Channel id for auto indexing (make sure bot is admin)
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '8699747292').split()] # Replace with the actual admin ID(s) to add
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1003734234742').split()]  # Channel id for auto indexing (make sure bot is admin)
 
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002573823548'))  # Log channel id (make sure bot is admin)
-BIN_CHANNEL = int(environ.get('BIN_CHANNEL', '-1002551533001'))  # Bin channel id (make sure bot is admin)
-PREMIUM_LOGS = int(environ.get('PREMIUM_LOGS', '-1002648671971'))  # Premium logs channel id
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1003992777109'))  # Log channel id (make sure bot is admin)
+BIN_CHANNEL = int(environ.get('BIN_CHANNEL', '-1003992777109'))  # Bin channel id (make sure bot is admin)
+PREMIUM_LOGS = int(environ.get('PREMIUM_LOGS', '-1003992777109'))  # Premium logs channel id
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '-1002635477308').split()] #(make sure bot is admin)
-support_chat_id = environ.get('SUPPORT_CHAT_ID', '-1003506315650')  # Support group id (make sure bot is admin)
-reqst_channel = environ.get('REQST_CHANNEL_ID', '-1003494610843')  # Request channel id (make sure bot is admin)
+support_chat_id = environ.get('SUPPORT_CHAT_ID', '-1004499747599')  # Support group id (make sure bot is admin)
+reqst_channel = environ.get('REQST_CHANNEL_ID', '-1003992777109')  # Request channel id (make sure bot is admin)
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/premiumottreleases')  # Support group link (make sure bot is admin)
 
 # FORCE_SUB 
-auth_req_channels = environ.get("AUTH_REQ_CHANNELS", "-1003565940256")# requst to join Channel for force sub (make sure bot is admin) only for bot ADMINS  
-auth_channels     = environ.get("AUTH_CHANNELS", "-1003140286992 -1002536320197 -1003192727274 -1003696183217 -1003435139728 -1003752571755")# Channels for force sub (make sure bot is admin)
+auth_req_channels = environ.get("AUTH_REQ_CHANNELS", "-1004421549060")# requst to join Channel for force sub (make sure bot is admin) only for bot ADMINS  
+auth_channels     = environ.get("AUTH_CHANNELS", "-1004429996382")# Channels for force sub (make sure bot is admin)
 
 # ============================
 # Payment Configuration
@@ -128,7 +128,7 @@ STAR_PREMIUM_PLANS = {
 #   2. FamGateway API (fallback/instant) – optional third-party service; set
 #      FAMGATEWAY_API_KEY to enable order creation, status polling + webhook.
 # Docs: docs/FAMPAY_SETUP.md
-FAMPAY_ENABLED = is_enabled(environ.get('FAMPAY_ENABLED', 'True'), True)  # Master switch for UPI auto-approval
+FAMPAY_ENABLED = is_enabled(environ.get('FAMPAY_ENABLED', 'False'), False)  # Master switch for UPI auto-approval
 FAMPAY_UPI_ID = env_str('FAMPAY_UPI_ID', 'OWNER_UPI_ID', default='')    # Your @fam UPI id (falls back to OWNER_UPI_ID when it looks like a VPA)
 if '@' not in FAMPAY_UPI_ID:
     FAMPAY_UPI_ID = ''                                                # ignore placeholder text like "ɴᴏ ᴀᴠᴀɪʟᴀʙʟᴇ..."
@@ -142,7 +142,7 @@ FAMPAY_ORDERS_COLLECTION = env_str('FAMPAY_ORDERS_COLLECTION', default='fampay_o
 FAMPAY_EVENTS_COLLECTION = env_str('FAMPAY_EVENTS_COLLECTION', default='fampay_events')
 
 # --- Gmail IMAP verification (primary verifier) ---
-FAMPAY_IMAP_ENABLED = is_enabled(environ.get('FAMPAY_IMAP_ENABLED', 'True'), True)
+FAMPAY_IMAP_ENABLED = is_enabled(environ.get('FAMPAY_IMAP_ENABLED', 'False'), False)
 FAMPAY_EMAIL = env_str('FAMPAY_EMAIL', 'FAMPAY_IMAP_USER', 'FAMPAY_GMAIL', default='')           # Gmail linked to your FamPay account
 FAMPAY_EMAIL_PASSWORD = env_str('FAMPAY_EMAIL_PASSWORD', 'FAMPAY_IMAP_PASSWORD', default='')     # 16-char Google App Password (NOT your Gmail password)
 FAMPAY_IMAP_HOST = env_str('FAMPAY_IMAP_HOST', default='imap.gmail.com')
@@ -152,7 +152,7 @@ FAMPAY_EMAIL_SENDER_FILTER = env_str('FAMPAY_EMAIL_SENDER_FILTER', default='fama
 FAMPAY_IMAP_LOOKBACK_HOURS = env_int('FAMPAY_IMAP_LOOKBACK_HOURS', 12)  # (info only) how far back emails are considered on boot
 
 # --- FamGateway API verification (fallback verifier, optional) ---
-FAMGATEWAY_ENABLED = is_enabled(environ.get('FAMGATEWAY_ENABLED', 'True'), True)
+FAMGATEWAY_ENABLED = is_enabled(environ.get('FAMGATEWAY_ENABLED', 'False'), False)
 FAMGATEWAY_API_KEY = env_str('FAMGATEWAY_API_KEY', default='')          # Dashboard → API Keys
 FAMGATEWAY_BASE_URL = env_str('FAMGATEWAY_BASE_URL', default='https://famgateway.in').rstrip('/')
 FAMGATEWAY_WEBHOOK_SECRET = env_str('FAMGATEWAY_WEBHOOK_SECRET', default='')  # Optional; defaults to the API key (how FamGateway signs)
@@ -176,17 +176,17 @@ FAMPAY_PLANS = _parse_fampay_plans(environ.get('FAMPAY_PLANS', ''), STAR_PREMIUM
 # ============================
 # MongoDB Configuration
 # ============================
-DATABASE_URI = environ.get('DATABASE_URI', 'mongodb+srv://uvjangra:uvjangra@cluster0.cmjdvgq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')  # MongoDB URI — set via env, never commit credentials
+DATABASE_URI = environ.get('DATABASE_URI', 'mongodb+srv://VishnuJs:sfphtBLg@cluster0.lku9w7d.mongodb.net/?appName=Cluster0')  # MongoDB URI — set via env, never commit credentials
 DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0") # Database name (default: cluster)
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'dreamcinezone_files') # Collection name (default: dreamcinezone_files)
 
 # If MULTIPLE_DB Is True Then Fill DATABASE_URI2 Value Else You Will Get Error.
-MULTIPLE_DB = is_enabled(os.environ.get('MULTIPLE_DB', "True"), False) # Type True For Turn On MULTIPLE DB FUNTION 
+MULTIPLE_DB = is_enabled(os.environ.get('MULTIPLE_DB', "False"), False) # Type True For Turn On MULTIPLE DB FUNTION 
 DATABASE_URI2 = environ.get('DATABASE_URI2', 'mongodb+srv://yuvi123:yuvi123@cluster0.hlyhypg.mongodb.net/?appName=Cluster0')  # Second MongoDB URI (required when MULTIPLE_DB is True)
 # ============================
 # Movie Notification & Update Settings
 # ============================
-MOVIE_UPDATE_NOTIFICATION = is_enabled(environ.get('MOVIE_UPDATE_NOTIFICATION', 'True'), True)  # Notification On / Off
+MOVIE_UPDATE_NOTIFICATION = is_enabled(environ.get('MOVIE_UPDATE_NOTIFICATION', 'False'), False)  # Notification On / Off
 MOVIE_UPDATE_CHANNEL = int(environ.get('MOVIE_UPDATE_CHANNEL', '-1003192727274'))  # Notification of sent to your channel
 DREAMXBOTZ_IMAGE_FETCH = is_enabled(environ.get('DREAMXBOTZ_IMAGE_FETCH', 'True'), True)  # On / Off
 LINK_PREVIEW = is_enabled(environ.get('LINK_PREVIEW', 'True'), True) # Shows link preview in notification msg instead of image
@@ -225,15 +225,15 @@ def tmdb_key_from_env(env=None):
 
 
 TMDB_API_KEY = tmdb_key_from_env() # prefer to use your own tmdb API Key get it from https://www.themoviedb.org/settings/api
-TMDB_POSTER = is_enabled(environ.get('TMDB_POSTER', 'True'), True) # Shows TMDB poster in notification msg
-LANDSCAPE_POSTER = is_enabled(environ.get('LANDSCAPE_POSTER', 'True'), True) # Shows landscape poster in notification msg
+TMDB_POSTER = is_enabled(environ.get('TMDB_POSTER', 'False'), False) # Shows TMDB poster in notification msg
+LANDSCAPE_POSTER = is_enabled(environ.get('LANDSCAPE_POSTER', 'False'), False) # Shows landscape poster in notification msg
 
 # ============================
 # Verification Settings
 # ============================
-IS_VERIFY = is_enabled(environ.get('IS_VERIFY', 'True'), True)  # Verification On (True) / Off (False)
-LOG_VR_CHANNEL = int(environ.get('LOG_VR_CHANNEL', '-1003536704514')) #Verification Channel Id 
-LOG_API_CHANNEL = int(environ.get('LOG_API_CHANNEL', '-1003625579058')) #If Anyone Set Your Bot In Any Group And Set Shortner In That Group Then In This Channel The All Details Come
+IS_VERIFY = is_enabled(environ.get('IS_VERIFY', 'False'), False)  # Verification On (True) / Off (False)
+LOG_VR_CHANNEL = int(environ.get('LOG_VR_CHANNEL', '-1003992777109')) #Verification Channel Id 
+LOG_API_CHANNEL = int(environ.get('LOG_API_CHANNEL', '-1003992777109')) #If Anyone Set Your Bot In Any Group And Set Shortner In That Group Then In This Channel The All Details Come
 VERIFY_IMG = environ.get("VERIFY_IMG", "https://telegra.ph/file/9ecc5d6e4df5b83424896.jpg")
 
 TUTORIAL = environ.get("TUTORIAL", "https://t.me/hmmmmw876/785")   # Tutorial link for verification
@@ -263,7 +263,7 @@ UPDATE_CHNL_LNK = environ.get('UPDATE_CHNL_LNK', 'https://t.me/wanda_movies_upda
 # ============================
 # User Configuration
 # ============================
-auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
+auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '8699747292').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 PREMIUM_USER = [int(user) if id_pattern.search(user) else user for user in environ.get('PREMIUM_USER', '').split()]
 
@@ -286,24 +286,24 @@ IMDB = is_enabled(environ.get('IMDB', "False"), False)    # IMDB Results On (Tru
 AUTO_FFILTER = is_enabled(environ.get('AUTO_FFILTER', "True"), True) # Auto Filter On (True) / Off (False)
 AUTO_DELETE = is_enabled(environ.get('AUTO_DELETE', "True"), True) # Auto Delete On (True) / Off (False)
 LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "False"), False) # Long IMDB Description On (True) / Off (False)
-SPELL_CHECK_REPLY = is_enabled(environ.get("SPELL_CHECK_REPLY", "True"), True) # Spell Check Mode On (True) / Off (False)
+SPELL_CHECK_REPLY = is_enabled(environ.get("SPELL_CHECK_REPLY", "False"), True) # Spell Check Mode On (True) / Off (False)
 MELCOW_NEW_USERS = is_enabled(environ.get('MELCOW_NEW_USERS', "False"), False) # Melcow New Users On (True) / Off (False)
 PROTECT_CONTENT = is_enabled(environ.get('PROTECT_CONTENT', "False"), False) # Protect Content On (True) / Off (False)
 PM_SEARCH = is_enabled(environ.get('PM_SEARCH', "True"), True)  # PM Search On (True) / Off (False)
 EMOJI_MODE = is_enabled(environ.get('EMOJI_MODE', "False"), False)  # Emoji status On (True) / Off (False)
 BUTTON_MODE = is_enabled(environ.get('BUTTON_MODE', "True"), True) # Default for new group settings; search results always use inline buttons
-STREAM_MODE = is_enabled(environ.get('STREAM_MODE', "True"), True) # Set Stream mode True or False
+STREAM_MODE = is_enabled(environ.get('STREAM_MODE', "False"), False) # Set Stream mode True or False
 PREMIUM_STREAM_MODE = is_enabled(environ.get('PREMIUM_STREAM_MODE', "False"), False) # Stream mode only for premium users
 COLOR_BUTTONS = is_enabled(environ.get('COLOR_BUTTONS', "True"), True) # Coloured inline buttons (blue/green/red) On (True) / Off (False)
 
 # ============================
 # AI Spell Check (Groq + IMDb fallback)
 # ============================
-AI_SPELL_CHECK = is_enabled(environ.get('AI_SPELL_CHECK', "True"), True)  # Use Groq/IMDb to fix misspelled titles
+AI_SPELL_CHECK = is_enabled(environ.get('AI_SPELL_CHECK', "False"), False)  # Use Groq/IMDb to fix misspelled titles
 # On a search miss, fuzzy-match the typed text against titles that exist in
 # the file DB and show coloured "did you mean" buttons (or auto-fix when the
 # match is obvious). See dreamxbotz/util/title_suggest.py.
-DB_SUGGEST = is_enabled(environ.get('DB_SUGGEST', "True"), True)  # File-DB "did you mean" suggestions On/Off
+DB_SUGGEST = is_enabled(environ.get('DB_SUGGEST', "False"), False)  # File-DB "did you mean" suggestions On/Off
 # Koyeb/Heroku: set GROQ_API_KEY (gsk_... from https://console.groq.com/keys).
 # GROK_API_KEY is accepted as a common typo/alias. This is Groq, not xAI Grok.
 GROQ_API_KEY = env_str('GROQ_API_KEY', 'GROK_API_KEY', default='regsk_mZGhZ131cAQeY1y4vO0yWGdyb3FYNwcYcq4IWfPsfIgae1M54e2h')
@@ -314,7 +314,7 @@ GROQ_MODEL = env_str('GROQ_MODEL', 'GROK_MODEL', default='llama-3.1-8b-instant')
 # ============================
 # Shown on the "no files found" screen; the user is PM'd once a matching file
 # is indexed (see dreamxbotz/util/title_notify.py).
-TITLE_NOTIFY = is_enabled(environ.get('TITLE_NOTIFY', "True"), True)  # Notify-me button On (True) / Off (False)
+TITLE_NOTIFY = is_enabled(environ.get('TITLE_NOTIFY', "False"), False)  # Notify-me button On (True) / Off (False)
 TITLE_NOTIFY_TTL_DAYS = env_int('TITLE_NOTIFY_TTL_DAYS', 30)  # Forget a request after this many days
 TITLE_NOTIFY_MAX_PER_USER = env_int('TITLE_NOTIFY_MAX_PER_USER', 5)  # Max pending requests kept per user
 
@@ -325,10 +325,10 @@ TITLE_NOTIFY_MAX_PER_USER = env_int('TITLE_NOTIFY_MAX_PER_USER', 5)  # Max pendi
 # Every newly indexed movie is stored in a small `recent_movies` collection and
 # rendered by /api/movies/new on the bot's own web server.  Posters are resolved
 # in the background from TMDB/IMDb.  See docs/NEWLY_UPLOADED_MOVIES.md.
-NEW_UPLOADED_MOVIES = is_enabled(environ.get('NEW_UPLOADED_MOVIES', "True"), True)  # Master switch: tracking + API + section
+NEW_UPLOADED_MOVIES = is_enabled(environ.get('NEW_UPLOADED_MOVIES', "False"), False)  # Master switch: tracking + API + section
 NEW_UPLOADED_LIMIT = min(max(env_int('NEW_UPLOADED_LIMIT', 20), 1), 20)  # Cards shown (hard cap: 20)
-NEW_UPLOADED_ONLY_MOVIES = is_enabled(environ.get('NEW_UPLOADED_ONLY_MOVIES', "True"), True)  # Skip S01E02 style series for this section
-NEW_UPLOADED_POSTER_FETCH = is_enabled(environ.get('NEW_UPLOADED_POSTER_FETCH', "True"), True)  # Look posters up automatically (TMDB → IMDb)
+NEW_UPLOADED_ONLY_MOVIES = is_enabled(environ.get('NEW_UPLOADED_ONLY_MOVIES', "False"), False)  # Skip S01E02 style series for this section
+NEW_UPLOADED_POSTER_FETCH = is_enabled(environ.get('NEW_UPLOADED_POSTER_FETCH', "False"), False)  # Look posters up automatically (TMDB → IMDb)
 NEW_UPLOADED_POSTER_LOOKUPS = min(max(env_int('NEW_UPLOADED_POSTER_LOOKUPS', 60), 1), 200)  # Max posters backfilled per run
 NEW_UPLOADED_POSTER_RETRY_HOURS = max(env_int('NEW_UPLOADED_POSTER_RETRY_HOURS', 48), 1)  # Re-try a failed poster after N hours
 try:
@@ -356,8 +356,8 @@ NEW_UPLOADED_API_PATH = env_str('NEW_UPLOADED_API_PATH', default='/api/movies/ne
 #   (https://t.me/BOT_USERNAME?start=movie_MOVIE_ID).  The strip itself is
 #   rendered server side by render_template.py; only the artwork is fetched by
 #   /static/watch_hero.js from WATCH_HERO_API_PATH.
-WATCH_HERO = is_enabled(environ.get('WATCH_HERO', "True"), True)  # Master switch for the hero strip
-WATCH_HERO_ART_FETCH = is_enabled(environ.get('WATCH_HERO_ART_FETCH', "True"), True)  # Look missing artwork up on demand (TMDB → IMDb)
+WATCH_HERO = is_enabled(environ.get('WATCH_HERO', "False"), False)  # Master switch for the hero strip
+WATCH_HERO_ART_FETCH = is_enabled(environ.get('WATCH_HERO_ART_FETCH', "False"), False)  # Look missing artwork up on demand (TMDB → IMDb)
 try:
     WATCH_HERO_ART_TIMEOUT = float(environ.get('WATCH_HERO_ART_TIMEOUT') or 8)  # Per-lookup timeout (seconds) - a page view must stay snappy
 except (TypeError, ValueError):
@@ -373,7 +373,7 @@ MOVIE_ART_COLLECTION = environ.get('MOVIE_ART_COLLECTION', 'movie_art')  # Mongo
 #   register for a "notify me when uploaded" alert, which the existing
 #   title_notify pipeline fires the moment a file of that movie is indexed.
 #   See docs/COMING_SOON.md.
-COMING_SOON = is_enabled(environ.get('COMING_SOON', "True"), True)  # Master switch: rail + API + /comingsoon
+COMING_SOON = is_enabled(environ.get('COMING_SOON', "False"), False)  # Master switch: rail + API + /comingsoon
 COMING_SOON_LIMIT = min(max(env_int('COMING_SOON_LIMIT', 12), 1), 24)  # Cards shown (hard cap: 24)
 COMING_SOON_REFRESH_HOURS = min(max(env_int('COMING_SOON_REFRESH_HOURS', 6), 1), 168)  # Re-read TMDB every N hours
 COMING_SOON_GRACE_DAYS = min(max(env_int('COMING_SOON_GRACE_DAYS', 3), 0), 30)  # Keep a released movie for N days ("now released")
