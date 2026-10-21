@@ -51,7 +51,7 @@ def env_str(*keys, default=''):
 SESSION = environ.get('SESSION', 'dreamxbotz_search')   # Session name for the bot
 API_ID = env_int('API_ID', 39020336)  # API ID from my.telegram.org — set via env, do not hardcode
 API_HASH = environ.get('API_HASH', 'b6b6742ac6ad6936dfc88caeac95b7a4')  # API Hash from my.telegram.org — set via env
-BOT_TOKEN = environ.get('BOT_TOKEN', '8613715629:AAEjhE6eYwdYfb-wq517JdO0DMp978ZQcxY')    # Bot token from @BotFather
+BOT_TOKEN = environ.get('BOT_TOKEN', '8613715629:AAGSkfeugeWcEoV4qQxWqvHNO_Hlmvy7xX8')    # Bot token from @BotFather
 
 # ============================
 # Bot Settings Configuration
@@ -314,7 +314,7 @@ GROQ_MODEL = env_str('GROQ_MODEL', 'GROK_MODEL', default='llama-3.1-8b-instant')
 # ============================
 # Shown on the "no files found" screen; the user is PM'd once a matching file
 # is indexed (see dreamxbotz/util/title_notify.py).
-TITLE_NOTIFY = is_enabled(environ.get('TITLE_NOTIFY', "False"), False)  # Notify-me button On (True) / Off (False)
+TITLE_NOTIFY = is_enabled(environ.get('TITLE_NOTIFY', "True"), True)  # Notify-me button On (True) / Off (False)
 TITLE_NOTIFY_TTL_DAYS = env_int('TITLE_NOTIFY_TTL_DAYS', 30)  # Forget a request after this many days
 TITLE_NOTIFY_MAX_PER_USER = env_int('TITLE_NOTIFY_MAX_PER_USER', 5)  # Max pending requests kept per user
 
